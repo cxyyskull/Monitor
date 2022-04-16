@@ -13,11 +13,10 @@ jd_zdjr_activityUrl 活动地址 必需
 即时任务，无需cron
 
 */
-const $ = new Env('组队瓜分-落幕');
 let jd_zdjr_activityId = ''// 活动ID
 let jd_zdjr_activityUrl = ''// 活动地址
 
-const $=new Env('组队瓜分京豆');
+const $=new Env('组队瓜分京豆-落幕');
 const notify=$.isNode()?require('./sendNotify'):'';
 const jdCookieNode=$.isNode()?require('./jdCookie.js'):'';
 let cookiesArr=[],cookie='',message='',messageTitle='';
