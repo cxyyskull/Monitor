@@ -18,7 +18,7 @@ cron "35 1,23 * * *" script-path=https://raw.githubusercontent.com/KingRan/JDJB/
 ============小火箭=========
 女装盲盒 = type=cron,script-path=https://raw.githubusercontent.com/KingRan/JDJB/main/jd_nzmh.js, cronexpr="35 1,23 * * *", timeout=3600, enable=true
  */
-const $ = new Env('女装盲盒抽京豆');
+const $ = new Env('女装盲盒抽京豆-落幕');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
