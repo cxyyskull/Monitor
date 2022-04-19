@@ -1,6 +1,5 @@
 /*
-大牌联合通用开卡
-新增开卡脚本，一次性脚本
+大牌联合通用开卡-虽加密放心用，不推荐并发
 
 通用大牌联合通用开卡：
 活动地址：https://jinggengjcq-isv.isvjcloud.com/xxxx/xxx/xxx
@@ -21,7 +20,7 @@
 #大牌联合通用开卡
 1 1 1 1 * jd_opencardDPLHTY.js, tag=大牌联合通用开卡, enabled=true
 */
-const $ = new Env("大牌联合通用开卡-加密");
+const $ = new Env("大牌联合通用开卡-加密-落幕");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [],
