@@ -1,3 +1,4 @@
+/*
 环境变量
 ownCookieNum 需要助力数量，默认4个
 SHARE_ACTIVITY_ID活动id
