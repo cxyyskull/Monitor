@@ -1,5 +1,5 @@
-let mode = __dirname.includes('magic')
-const {Env} = mode ? require('./utils/magic') : require('./utils/magic')
+let mode = __dirname.includes('magic1')
+const {Env} = mode ? require('./utils/magic1') : require('./utils/magic1')
 const $ = new Env('M关注有礼');
 $.followShopArgv = process.env.M_FOLLOW_SHOP_ARGV
     ? process.env.M_FOLLOW_SHOP_ARGV
