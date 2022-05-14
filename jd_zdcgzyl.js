@@ -1,15 +1,12 @@
 let mode = __dirname.includes('magic1')
 const {Env} = mode ? require('./function/magic1') : require('./function/magic1')
 const $ = new Env('M关注有礼2-落幕');
-$.followShopArgv = process.env.M_FAV_SHOP_ARGV
-    ? process.env.M_FAV_SHOP_ARGV
+$.followShopArgv = process.env.M_FOLLOW_SHOP_ARGV
+    ? process.env.M_FOLLOW_SHOP_ARGV
     : '';
 if (mode) {
     $.followShopArgv = '1000104168_1000104168'
 }
-
-var newVar1 = {fn:"", body:{}}
-var newVar2 = {fn:"", body:{}}
 $.logic = async function () {
     let argv = $?.followShopArgv?.split('_');
     $.shopId = argv?.[0];
@@ -59,7 +56,7 @@ $.after = async function () {
         $.msg.push($.activityUrl);
     }
 }
-$.run({whitelist: ['1-21'], wait: [1000, 3000]}).catch(reason => $.log(reason))
+$.run({whitelist: ['1-5'], wait: [1000, 3000]}).catch(reason => $.log(reason))
 
 async function drawShopGift() {
     $.log('店铺信息', $.shopId, $.venderId, $.activityId)
@@ -70,10 +67,8 @@ async function drawShopGift() {
         "sourceRpc": "shop_app_home_window",
         "venderId": $.venderId
     };
-    if (newVar2.fn == undefined || newVar2.fn == null || newVar2.fn == '') {
-        console.log("----进入了----")
-        newVar2 = await $.sign('drawShopGift', sb);
-    }
+    let newVar = await $.sign('drawShopGift', sb);
+
     let headers = {
         'J-E-H': '',
         'Connection': 'keep-alive',
@@ -88,8 +83,8 @@ async function drawShopGift() {
     }
     // noinspection DuplicatedCode
     headers['Cookie'] = $.cookie
-    let url = `https://api.m.jd.com/client.action?functionId=` + newVar2.fn
-    let {status, data} = await $.request(url, headers, newVar2.sign);
+    let url = `https://api.m.jd.com/client.action?functionId=` + newVar.fn
+    let {status, data} = await $.request(url, headers, newVar.sign);
     return data;
 }
 
@@ -105,11 +100,7 @@ async function getShopHomeActivityInfo() {
         "lat": "0",
         "venderId": $.venderId
     }
-    if (newVar1.fn == undefined || newVar1.fn == null || newVar1.fn == '') {
-        console.log("----进入了----")
-        newVar1 = await $.sign('getShopHomeActivityInfo', sb);
-		
-    }
+    let newVar = await $.sign('getShopHomeActivityInfo', sb);
     let headers = {
         'J-E-H': '',
         'Connection': 'keep-alive',
@@ -124,7 +115,7 @@ async function getShopHomeActivityInfo() {
     }
     // noinspection DuplicatedCode
     headers['Cookie'] = $.cookie
-    let url = `https://api.m.jd.com/client.action?functionId=` + newVar1.fn
-    let {status, data} = await $.request(url, headers, newVar1.sign);
+    let url = `https://api.m.jd.com/client.action?functionId=` + newVar.fn
+    let {status, data} = await $.request(url, headers, newVar.sign);
     return data;
 }
