@@ -12,7 +12,7 @@
 function openCardActivity(activityId, activityUrl, pin, num, againUserIndex) {
   return new Promise((resolve) => {
     const prefix = activityUrl.includes("cjhydz") ? "cjhydz" : "lzkjdz";
-    const $ = new Env("微定制瓜分通用");
+    const $ = new Env("微定制-落幕");
     const notify = $.isNode() ? require("./sendNotify") : "";
     const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
     let cookiesArr = [],
