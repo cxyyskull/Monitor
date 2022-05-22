@@ -16,7 +16,7 @@ cron:1 1 1 1 *
 
 */
 
-const $ = new Env('读秒拼手速通用活动');
+const $ = new Env('读秒拼手速-落幕');
 
 const jdCookieNode=$.isNode()?require('./jdCookie.js'):'';
 const notify=$.isNode()?require('./sendNotify'):'';
